@@ -1,0 +1,12 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.my_web_weather {
+    margin:0;
+    padding:0;
+    background: pink;
+    background: url('../images/backgroud.jpg') no-repeat center fixed;
+    background-size: cover;
+}

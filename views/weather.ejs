@@ -1,0 +1,128 @@
+
+<%- include('include/head.ejs') %>
+<script src="/javascripts/weather.js"> </script>
+<link  rel="stylesheet"  href="/css/meteo.css">
+<link rel='stylesheet' href="/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body >
+<%- include('include/navigation.ejs') %>
+<div class="container-fluid">
+
+    <div class="my_web_weather">
+        <div class="container-fluid">
+           <div class="row align-items-center justify-content-center">
+                <div class="col-md-4  text-center ;alert alert-secondary">
+                    <h1>Hello <%= Username %></h1>
+                    <h3>Welcome to Weather forecast site</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><br>
+                    <div id="tit" class="alert alert-secondary">
+                        <form action="api/position"  method="post" id="form-group">
+                            <div class="form-group" style="text-align: left">
+                                <label for="LocationName">Location Name</label>
+                                <input type="text" class="form-control" id="LocationName" placeholder="enter your location name">
+                                <label for="Latitudenum">Latitude Number</label>
+                                <input type="number" class="form-control" id="Latitudenum" placeholder="enter your latitude number">
+                                <label for="Longitudenum">Longitude Number</label>
+                                <input type="number" class="form-control" id="Longitudenum" placeholder="enter your longitude number">
+                                <br>
+                            </div>
+                        </form>
+                        <a href=""></a>
+                        <div style="text-align:left">
+                            <button class="btn btn-primary" id="Add_Button">Add this position</button>
+
+                        </div>
+                        <div id="notconnected"></div>
+                    </div>
+                    <br>
+
+                    <div  class="alert alert-danger" id="errorCity" style="display: none;text-align: left"></div>
+                    <ul class="alert alert-danger" id="errorField" style="display: none;text-align: left">
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 "><br>
+                    <div class="alert alert-secondary" id="list1" style="display: none">
+                        <div id="list" style="text-align:left"></div>
+                        <button class="btn btn-danger" id="EraseLocation">Erase</button>
+                        <button class="btn btn-primary" id="Get_the_Weather">Get Weather</button>
+                        <button class="btn btn-secondary" id="EraseAll">Erase all</button>
+
+                    </div>
+                    <div class="alert alert-danger" id="choose" style="display: none"> You need to choose a city</div>
+                </div>
+            </div>
+            <div  class="d-flex justify-content-center" >
+                <div id ="spinner" class="spinner-border" role="status" style="width: 10rem; height: 10rem;display: none;filter: brightness(50%);">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ;alert alert-danger" id="loadFailed" style="display: none">
+                    <p>"weather forecast service is not available right now, please try again later."</p>
+                </div>
+                <div class="col-md-6 " id="show_the_weather" style="display: none">
+                    <div class="alert alert-secondary " style="overflow-x:auto">
+                        <table class="table table-bordered">
+
+                            <thead>
+                            <tr>
+                                <th scope="col" id="Name_Of_City"></th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Weather</th>
+                                <th scope="col">Temp_max</th>
+                                <th scope="col">Temp_min</th>
+                                <th scope="col">Wind10m_max</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="Day1">
+                                <th></th>
+                            </tr>
+                            <tr id="Day2">
+                                <th></th>
+                            </tr>
+                            <tr id="Day3">
+                                <th></th>
+                            </tr>
+                            <tr id="Day4">
+                                <th></th>
+                            </tr>
+                            <tr id="Day5">
+                                <th></th>
+                            </tr>
+                            <tr id="Day6">
+                                <th></th>
+                            </tr>
+                            <tr id="Day7">
+                                <th></th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="alert alert-secondary ; col-md-6" style="display: none;align-content: center" id="myImage">
+                    <div style="width:100% ;height: 100%">
+                        <figure class="figure">
+                            <img src="/images/default_image.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <figcaption class="figure-caption">The picture of weather.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

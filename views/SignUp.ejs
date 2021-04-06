@@ -1,0 +1,51 @@
+ <%- include('include/head.ejs') %>
+ <link rel='stylesheet' href="/css/style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <style>
+
+ </style>
+ </head>
+
+ <body>
+ <%- include('include/navigation.ejs') %>
+ <div class="container-fluid">
+
+     <div class="grid">
+         <div></div>
+         <div class="row">
+             <div class=" col-xs-12 ; alert alert-warning" role="alert">
+                 <h1>Welcome to <%= title %> page</h1>
+                 <p>Pleases enter your contact details and press send</p>
+                 <form action="/register" method="POST">
+                     <div class="form-group">
+                         <div class="col-xs-12">
+                             <label for="email">Email address</label>
+                             <input type="email" class="form-control" name="mail" id="email" placeholder="name@example.com" required>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <div class="col-xs-12">
+                             <label for="firstName">First name</label>
+                             <input type="text" class="form-control" name="firstName" id="firstName" pattern="[A-Za-z]+$" title="enter only alphabetic charachter" placeholder="First name" required>
+                         </div>
+                         <div class="col-xs-12">
+                             <label for="lastName">Last name</label>
+                             <input type="text" class="form-control" name="Secondname" id="lastName" pattern="[A-Za-z]+$" title="enter only alphabetic charachter" placeholder="Last name" required>
+                         </div>
+                     </div>
+                     <% if (isWasaProblem) { %>
+                         <p>choose a different email the email you have chosen is already using</p>
+                     <% } %>
+                     <input type="submit" class="btn btn-primary">
+                 </form>
+             </div>
+         </div>
+         <div></div>
+     </div>
+ </div>
+
+ </body>
+
+ </html>

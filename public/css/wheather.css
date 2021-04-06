@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.my_web_weather {
+     margin:0;
+    padding:0;
+    background: pink;
+    background: url('https://besttv232-ynet-images1-prod.cdn.it.best-tv.com/picserver5/crop_images/2021/01/14/ByEXKa00aAv/ByEXKa00aAv_0_149_1280_721_0_x-large.jpg') no-repeat center fixed;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
+    height: 100%;
+
+}

@@ -1,0 +1,31 @@
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    border-radius: 3px;
+    font-size:30px;
+    background: url('../images/backgroud.jpg') no-repeat center fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+a {
+    color:pink;
+}
+.container-fluid{
+    max-width: 1600px;
+    margin: auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap: 50px;
+    align-items: center;
+}
+
+.abs-center-x {
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    margin-top:15px;
+    transform: translateX(-50%);
+}
